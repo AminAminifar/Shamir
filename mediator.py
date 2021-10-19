@@ -22,7 +22,9 @@ class Mediator:
         self.intermediate_results[party_index] = intermediate_result
 
     def solve(self):
-        print(">>>", self.known_coefficients, self.intermediate_results)
         result = np.linalg.solve(self.known_coefficients[:self.k,:], self.intermediate_results[:self.k])
+        # result = np.linalg.inv(self.known_coefficients[:self.k,:]).dot(self.intermediate_results[:self.k])
+        print("Check the solution's correctness:",
+        np.allclose(np.dot(self.known_coefficients[:self.k,:], result), self.intermediate_results[:self.k]))
         aggregation_result = result[-1]
         return aggregation_result

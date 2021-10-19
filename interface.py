@@ -24,7 +24,7 @@ class Interface:
 
         #  update intermediate results on the mediator and solve the system of equations
         for i in range(len(self.parties)):
-            self.mediator.update_intermediate_results(intermediate_result=self.intermediate_result[i] , party_index=i)
+            self.mediator.update_intermediate_results(intermediate_result=self.intermediate_result[i], party_index=i)
 
         aggregation_result = self.mediator.solve()
 
