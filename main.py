@@ -8,7 +8,6 @@ k = 9
 
 #  generate secret values
 secret_values = 1 - np.random.random_sample(n)
-secret_values = secret_values * 100
 public_vector = 1 - np.random.random_sample(n)
 
 
